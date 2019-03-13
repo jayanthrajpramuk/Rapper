@@ -1,0 +1,30 @@
+- always everything in small with '-' during component creation / service ect
+- adding ng-bootstrap, bootstrap , fontawesome
+
+- features like redirect url
+- subject to act like a broadcaster on change
+
+Concepts covered.
+
+
+Best practices:
+
+- services can have methods . they are like API. Expose only which is necessary
+
+- Always keep the big picture while coding.
+
+-  do not use warpper for async multiple times. store in some variable out side dom then use it.
+
+
+- order service -> give list of products wth quantity and total price and date placed on top of hirerarchy, Id of loggedInuser
+
+- how to have attribute common across the application ? stratergy
+
+- --------------- --------------- --------------- --------------- --------------- --------------- --------------- --------------
+
+- 2way binding long way.
+
+
+- using getter setter.
+
+-

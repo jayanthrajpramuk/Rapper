@@ -1,0 +1,2 @@
+ - redirect URL when you are in a perticular page
+ - usimg ngrx to store the user information. then use this information in bs-nav bar to display the links and the sub menu

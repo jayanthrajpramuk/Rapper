@@ -1,0 +1,21 @@
+<!--
+
+<div *ngFor="let link of moduleLinks">
+  <a routerLink="{{link.path}}">{{link.name}}</a>
+</div>
+
+
+fixed-top is tricky class, add it you can get the original layout
+
+-->
+<nav class="navbar-pad navbar navbar-expand-md navbar-light bg-light fixed-top">
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" *ngFor="let link of moduleLinks">
+        <a class="nav-link" routerLink="{{link.path}}">{{link.name}}</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>
