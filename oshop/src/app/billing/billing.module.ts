@@ -9,6 +9,8 @@ import {RegisterPatientComponent} from './register-patient/register-patient.comp
 import {DiagnosePatientComponent} from './diagnose-patient/diagnose-patient.component';
 import {BillPatientComponent} from './bill-patient/bill-patient.component';
 import {ReportPatientComponent} from './report-patient/report-patient.component';
+import {StoreModule} from "@ngrx/store";
+import {billreducer} from "./store/bill-reducer";
 
 
 @NgModule({
@@ -23,7 +25,7 @@ import {ReportPatientComponent} from './report-patient/report-patient.component'
   imports: [
     CommonModule,
     CoreModule,
-
+    StoreModule.forFeature('billing', billreducer),
     BillingRoutingModule
   ]
 })

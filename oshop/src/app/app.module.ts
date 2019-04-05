@@ -19,6 +19,9 @@ import {TaRootComponent} from "./talent-acquisition/ta-root/ta-root.component";
 import {EsiRootComponent} from "./employee-shift-info/esi-root/esi-root.component";
 import {HomeComponent} from "./multi-project-home/home.component";
 import {InvalidUrlComponent} from "./core/invalid-url/invalid-url.component";
+import {StoreModule} from "@ngrx/store";
+import {rootreducer} from "./root-store/root-reducer";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 
 
 @NgModule({
@@ -43,6 +46,11 @@ import {InvalidUrlComponent} from "./core/invalid-url/invalid-url.component";
     ReactiveFormsModule,
     CoreModule,
     BreadcrumbModule,
+    StoreModule.forRoot({initLoad: rootreducer}),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
+    }),
 //    AngularFireModule.initializeApp(environment.firebase),
     RouterModule.forRoot([
 

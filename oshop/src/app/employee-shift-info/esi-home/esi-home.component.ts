@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ESState} from "../store/employee-shift-reducer";
+import {Store} from "@ngrx/store";
+import {EmployeeShiftUser} from "../store/employee-shift-actions";
 
 @Component({
   selector: 'app-esi-home',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EsiHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store : Store<ESState>) { }
 
   ngOnInit() {
+  }
+
+  onClick() {
+      this.store.dispatch(new EmployeeShiftUser({
+        name: 'smita',
+        shiftType: 'GS',
+        location: 'Bangalore',
+        age: 25,
+        gender: 'F'
+      }))
   }
 
 }
