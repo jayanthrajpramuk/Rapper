@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from "@ngrx/store";
 import {BillState} from "../store/bill-reducer";
-import {BillActionTypes, BillLanguage} from "../store/bill-actions";
+import {BillActionTypes, BillLanguage, ChangeBillLanguage, LoadAllBills} from "../store/bill-actions";
 
 @Component({
   selector: 'billing-home',
@@ -14,9 +14,13 @@ export class BillingHomeComponent implements OnInit {
   constructor(private store : Store<BillState>) { }
 
   onClick() {
-      this.store.dispatch(new BillLanguage({
-        language:'english'
+      this.store.dispatch(new ChangeBillLanguage({
+        language: 'english'
       }));
+  }
+
+  onLoad() {
+    this.store.dispatch(new LoadAllBills());
   }
 
   ngOnInit() {

@@ -9,8 +9,13 @@ import {RegisterPatientComponent} from './register-patient/register-patient.comp
 import {DiagnosePatientComponent} from './diagnose-patient/diagnose-patient.component';
 import {BillPatientComponent} from './bill-patient/bill-patient.component';
 import {ReportPatientComponent} from './report-patient/report-patient.component';
-import {StoreModule} from "@ngrx/store";
+import {Action, StoreModule} from "@ngrx/store";
 import {billreducer} from "./store/bill-reducer";
+import {Actions, EffectsModule} from "@ngrx/effects";
+import {BillEffects} from "./store/bill-effects";
+import {HttpClient} from "@angular/common/http";
+import {BillService} from "./services/bill-service";
+import {RegistrationService} from "./services/registration-service";
 
 
 @NgModule({
@@ -25,8 +30,15 @@ import {billreducer} from "./store/bill-reducer";
   imports: [
     CommonModule,
     CoreModule,
+    EffectsModule.forFeature([BillEffects]),
     StoreModule.forFeature('billing', billreducer),
     BillingRoutingModule
+  ],
+  providers : [
+    HttpClient,
+    Actions,
+    BillService,
+    RegistrationService
   ]
 })
 export class BillingModule {

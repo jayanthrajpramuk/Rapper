@@ -7,13 +7,15 @@ export interface BillState {
   Country : string
   Membership: string
   User : { username: string; age: Number; gender: string }
+  Bill: {billNo:Number,paientName:String}
 }
 
 export const initialState: BillState = {
   Language: null,
   Country : null,
   Membership: null,
-  User : null
+  User : null,
+  Bill : null
 };
 
 export function billreducer(state = initialState, action: BillUnionActions): BillState {
@@ -23,7 +25,7 @@ export function billreducer(state = initialState, action: BillUnionActions): Bil
     case BillActionTypes.Language: {
       return {
         ...state,
-        Language:'en'
+        Language: action.payload
       }
     }
     case BillActionTypes.Country: {
@@ -46,6 +48,12 @@ export function billreducer(state = initialState, action: BillUnionActions): Bil
           age: 31,
           gender: 'Male'
         }
+      }
+    }
+    case BillActionTypes.LoadBillsSuccess: {
+      return {
+        ...state,
+        Bill: action.payload
       }
     }
 

@@ -9,7 +9,7 @@ import {Title} from "@angular/platform-browser";
 })
 export class BillingRootComponent implements OnInit {
 
-  MODULE_ROOT = '/billing';
+  MODULE_ROOT = '/billing-mock-data';
 
   moduleLinks = [
     {'name': 'Root', 'path': '/'},

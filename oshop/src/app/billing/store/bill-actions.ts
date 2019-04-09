@@ -6,17 +6,38 @@
 import {Action} from "@ngrx/store";
 
 export enum BillActionTypes {
+  ChangeLanguage = '[Change Bill Language] Change Language',
   Language = '[Bill Language] Language',
   Country = '[Bill Country] Country',
   Membership = '[Bill Membership] Membership',
   User = '[Bill User] User',
+  LoadBills = '[Load Bills] Load Bills',
+  LoadBillsSuccess = '[Load Bill Success] LBS'
 }
+export class LoadBillsSuccess implements Action {
+  readonly type = BillActionTypes.LoadBillsSuccess;
+
+  constructor(public payload: {billNo:Number,paientName:String}) {
+  }
+
+}
+
+
+export class LoadAllBills implements Action {
+  readonly type = BillActionTypes.LoadBills;
+}
+
+export class ChangeBillLanguage implements Action {
+  readonly type = BillActionTypes.ChangeLanguage;
+
+ constructor(public payload: string){}
+}
+
 
 export class BillLanguage implements Action {
   readonly type = BillActionTypes.Language;
 
-  constructor(public payload: { language: string }) {
-  }
+  constructor(public payload: string){}
 }
 
 export class BillCountry implements Action {
@@ -40,4 +61,4 @@ export class BillUser implements Action {
   }
 }
 
-export type BillUnionActions = BillLanguage | BillCountry | BillMembership | BillUser;
+export type BillUnionActions = LoadBillsSuccess | ChangeBillLanguage | BillLanguage | BillCountry | BillMembership | BillUser;

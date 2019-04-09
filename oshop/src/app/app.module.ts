@@ -22,6 +22,7 @@ import {InvalidUrlComponent} from "./core/invalid-url/invalid-url.component";
 import {StoreModule} from "@ngrx/store";
 import {rootreducer} from "./root-store/root-reducer";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {EffectsModule} from "@ngrx/effects";
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
     ReactiveFormsModule,
     CoreModule,
     BreadcrumbModule,
+    EffectsModule.forRoot([]),
     StoreModule.forRoot({initLoad: rootreducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
@@ -87,8 +89,7 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 
     ])
   ],
-  providers: [
-     ],
+  providers: [],
   bootstrap: [AppComponent],
   exports: []
 })
