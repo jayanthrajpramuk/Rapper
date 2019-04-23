@@ -14,9 +14,7 @@ export class BillingHomeComponent implements OnInit {
   constructor(private store : Store<BillState>) { }
 
   onClick() {
-      this.store.dispatch(new ChangeBillLanguage({
-        language: 'english'
-      }));
+      this.store.dispatch(new ChangeBillLanguage("kgfiedfieu"));
   }
 
   onLoad() {

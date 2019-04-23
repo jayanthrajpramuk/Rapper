@@ -11,7 +11,7 @@ export class BillService {
   }
 
   loadBill() {
-    return this.http.get('http://localhost:4200/assets/billing-mock-data/bill.json')
+    return this.http.get('http://localhost:4200/assets/billing-mock-data/bill.json');
   }
 
   ChangeLanguage() {

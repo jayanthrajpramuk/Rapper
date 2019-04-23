@@ -11,6 +11,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 import {CustomFormsModule} from 'ng2-validation'
 import {RouterModule} from '@angular/router';
+import { AgGridModule } from 'ag-grid-angular';
+
 import {BsNavComponent} from './bs-nav/bs-nav.component';
 import {CoreModule} from "./core/core.module";
 import {BreadcrumbModule} from 'angular-crumbs';
@@ -47,7 +49,7 @@ import {EffectsModule} from "@ngrx/effects";
     ReactiveFormsModule,
     CoreModule,
     BreadcrumbModule,
-    EffectsModule.forRoot([]),
+      EffectsModule.forRoot([]),
     StoreModule.forRoot({initLoad: rootreducer}),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states

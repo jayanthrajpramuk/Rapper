@@ -5,21 +5,23 @@ import {RegisterPatientComponent} from "./register-patient/register-patient.comp
 import {DiagnosePatientComponent} from "./diagnose-patient/diagnose-patient.component";
 import {BillPatientComponent} from "./bill-patient/bill-patient.component";
 import {ReportPatientComponent} from "./report-patient/report-patient.component";
+import {BillingAdminHomeComponent} from "./billing-admin/billing-admin-home/billing-admin-home.component";
+import {BillingAdminRootComponent} from "./billing-admin/billing-admin-root/billing-admin-root.component";
 
 const routes: Routes = [
   {
     path: 'home', component: BillingHomeComponent, data: {
-      breadcrumb: 'Home'
+      breadcrumb: 'home'
     }
   },
   {
     path: 'register', component: RegisterPatientComponent, data: {
-      breadcrumb: 'Register'
+      breadcrumb: 'register'
     }
   },
   {
     path: 'diagnosis', component: DiagnosePatientComponent, data: {
-      breadcrumb: 'Diagnose'
+      breadcrumb: 'diagnose'
     }
   },
   {
@@ -29,9 +31,20 @@ const routes: Routes = [
   },
   {
     path: 'reports', component: ReportPatientComponent, data: {
-      breadcrumb: 'Reports'
+      breadcrumb: 'reports'
     }
-  }
+  },
+  {
+    path: 'admin',
+    data: {
+      breadcrumb: 'admin'
+    },
+ //   component: BillingAdminRootComponent,
+    children: [
+      {path: '', loadChildren: '../../app/billing/billing-admin/billing-admin.module#BillingAdminModule'}
+    ]
+
+  },
 ];
 
 @NgModule({

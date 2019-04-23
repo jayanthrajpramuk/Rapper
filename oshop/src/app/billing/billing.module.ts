@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import {BillingRoutingModule} from './billing-routing.module';
@@ -16,6 +17,8 @@ import {BillEffects} from "./store/bill-effects";
 import {HttpClient} from "@angular/common/http";
 import {BillService} from "./services/bill-service";
 import {RegistrationService} from "./services/registration-service";
+import {BillingAdminHomeComponent} from "./billing-admin/billing-admin-home/billing-admin-home.component";
+import {BillingAdminRootComponent} from "./billing-admin/billing-admin-root/billing-admin-root.component";
 
 
 @NgModule({
@@ -24,12 +27,15 @@ import {RegistrationService} from "./services/registration-service";
     RegisterPatientComponent,
     DiagnosePatientComponent,
     BillPatientComponent,
-    ReportPatientComponent
+    ReportPatientComponent,
+    BillingAdminRootComponent
   ],
 
   imports: [
     CommonModule,
     CoreModule,
+    FormsModule,
+    ReactiveFormsModule,
     EffectsModule.forFeature([BillEffects]),
     StoreModule.forFeature('billing', billreducer),
     BillingRoutingModule

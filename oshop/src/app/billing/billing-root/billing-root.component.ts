@@ -9,7 +9,7 @@ import {Title} from "@angular/platform-browser";
 })
 export class BillingRootComponent implements OnInit {
 
-  MODULE_ROOT = '/billing-mock-data';
+  MODULE_ROOT = '/billing';
 
   moduleLinks = [
     {'name': 'Root', 'path': '/'},
@@ -17,7 +17,8 @@ export class BillingRootComponent implements OnInit {
     {'name': 'Register', 'path': this.MODULE_ROOT + '/register'},
     {'name': 'Diagnosis', 'path': this.MODULE_ROOT + '/diagnosis'},
     {'name': 'Bill', 'path': this.MODULE_ROOT + '/bill'},
-    {'name': 'Reports', 'path': this.MODULE_ROOT + '/reports'}
+    {'name': 'Reports', 'path': this.MODULE_ROOT + '/reports'},
+    {'name': 'Admin', 'path': this.MODULE_ROOT + '/admin'}
   ];
 
 
