@@ -1,0 +1,21 @@
+
+<h2>{{mode}} Role</h2>
+<form [formGroup]="roleForm">
+
+  <div class="form-group">
+    <label for="roleName">Role Name</label>
+    <input class="form-control" name="roleName" id="roleName" type="text" formControlName="roleName">
+  </div>
+
+  <div class="form-group">
+    <label for="roleDescription">Role Description</label>
+    <input class="form-control" name="roleDescription" id="roleDescription" type="text" formControlName="roleDescription">
+  </div>
+
+
+  <div>
+    <button (click)="saveRole()" class="btn btn-primary">Save</button>
+    <button (click)="cancel()" class="btn">Cancel</button>
+  </div>
+
+</form>

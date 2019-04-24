@@ -9,3 +9,8 @@ body {
 padding-top: 80px;
 padding-left: 20px;
 }
+
+
+.button-center-div {
+  text-align: center;
+}
